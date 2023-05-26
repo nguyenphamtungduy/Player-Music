@@ -75,14 +75,25 @@ function render() {
 }
 
 function handleEvent() {
+    body = $(".body");
     // xu ly phong to thu nho cd
     const cd = $(".media__cd");
     const cdWidth = cd.offsetWidth;
-    document.onscroll = function () {
-        const scrollTop = document.documentElement.scrollTop || window.scrollY;
+    const oldHeight = body.offsetHeight;
+    console.log(oldHeight);
+    bodyInner.onscroll = function () {
+        // const scrollTop = document.documentElement.scrollTop || window.scrollY;
+        const scrollTop = bodyInner.scrollTop || window.scrollY;
         const newCDWidth = cdWidth - scrollTop;
         cd.style.width = newCDWidth > 0 ? newCDWidth + "px" : 0;
         cd.style.opacity = newCDWidth / cdWidth;
+        const newMargin = newCDWidth > 0 ? 402 - scrollTop + "px" : 250 + "px";
+        body.style.marginTop = newMargin;
+        const newHeight =
+            newCDWidth > 0 ? oldHeight + scrollTop + "px" : 350 + "px";
+        console.log(newHeight);
+        body.style.height = newHeight;
+        // body.style.height = newHeight < 317 ? newHeight + "px" : 317 + "px";
     };
 
     // xu ly cd quay va dung
