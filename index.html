@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/base.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <link
+            rel="stylesheet"
+            href="./assets/fontawesome-free-6.4.0-web/css/all.css"
+        />
+        <title>Media Player</title>
+    </head>
+    <body>
+        <div class="media-wrap">
+            <div class="media">
+                <header class="media-top media-top--fixed">
+                    <article class="media-song">
+                        <p class="media-song__sub-title">Now laying</p>
+                        <h1 class="media-song__name">String 57th & 9th</h1>
+                    </article>
+                    <div class="media__cd">
+                        <div
+                            class="cd"
+                            style="
+                                background-image: url(./assets/img/default.jpg);
+                            "
+                        ></div>
+                    </div>
+                    <div class="media__control">
+                        <div class="media__control-top">
+                            <button class="btn btn-replay">
+                                <i class="fa-solid fa-rotate-right"></i>
+                            </button>
+                            <button class="btn btn-prev">
+                                <i class="fa-solid fa-backward-step"></i>
+                            </button>
+                            <button class="btn btn-play">
+                                <i class="play fa-solid fa-circle-play"></i>
+                                <i class="pause fa-solid fa-circle-pause"></i>
+                            </button>
+
+                            <button class="btn btn-next">
+                                <i class="fa-solid fa-forward-step"></i>
+                            </button>
+                            <button class="btn btn-random">
+                                <i class="fa-solid fa-shuffle"></i>
+                            </button>
+                        </div>
+                        <div class="header__control-range">
+                            <input
+                                class="range"
+                                step="1"
+                                value="0"
+                                type="range"
+                                name="range"
+                                id="range"
+                                min="0"
+                                max="100"
+                            />
+                        </div>
+                    </div>
+                </header>
+
+                <div class="body">
+                    <div class="body__inner"></div>
+                </div>
+                <article class="lyrics">
+                    <h3 class="lyrics__name">Tên bài hát</h3>
+                    <p class="lyrics__author">Tác giả</p>
+                    <pre></pre>
+                </article>
+            </div>
+        </div>
+        <audio id="audio" src=""></audio>
+        <script src="./assets/javascript/app.js"></script>
+    </body>
+</html>
